@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Support{% endblock title %}
+
+{% block content %}
+<div class="forms-container">
+    <h1>E-Mail Support</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="SEND" class="btn btn-success">
+    </form>
+</div>
+{% endblock content %}
