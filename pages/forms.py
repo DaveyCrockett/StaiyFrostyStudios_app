@@ -2,6 +2,8 @@ from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
 
+from config.settings import ALTERNATE_EMAIL_HOST_USER
+
 class SupportForm(forms.Form):
 
     name = forms.CharField(max_length=120)
@@ -70,5 +72,6 @@ class ContactForm(forms.Form):
             subject=subject,
             message=msg,
             from_email=settings.ALTERNATE_EMAIL_HOST_USER,
-            recipient_list=[settings.ALTERNATE_RECIPIENT_ADDRESS]
+            recipient_list=[settings.ALTERNATE_RECIPIENT_ADDRESS],
+            auth_password=settings.ALTERNATE_EMAIL_HOST_PASSWORD
         )

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Message Feed{% endblock title %}
+{% block content %}
+<div class="main-message-list">
+    {% for message in message_list %}
+    <div class="card mb-3; card-container">
+        <div class="card-body">
+        <h5 class="card-title">{{ message.title }}</h5>
+        <p class="card-text">{{ message.body }}</p>
+        <p class="card-text"><small class="text-muted">By: {{ message.author }} | Date: {{ message.created_on }}</small></p>
+        
+        <a href="{% url 'message_detail' pk=message.id %}">See Detail</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

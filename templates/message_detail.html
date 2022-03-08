@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ message.title }}{% endblock title %}
+
+{% block content %}
+    <h1 class="detail-heading">{{ message.title }}</h1>
+    <p><strong>Written By: {{ message.creator }} | on {{ message.created_on }}</strong></p>
+    <p class="detail-body">{{ message.body }}</p>
+    {% if user.is_authenticated %}
+    <a href="{% url 'edit_message' message.id %}" class="btn btn-primary">Edit</a> |
+    <a href="{% url 'delete_message' message.id %}" class="btn btn-warning">Delete</a>
+    {% endif %}
+{% endblock content %}
