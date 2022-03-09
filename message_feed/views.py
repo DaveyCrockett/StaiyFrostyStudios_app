@@ -3,7 +3,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Message
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.models import User
 
 # Create your views here.
 class MessageListView(ListView):

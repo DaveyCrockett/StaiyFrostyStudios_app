@@ -99,13 +99,14 @@ INSTALLED_APPS = (
     'accounts',
     'pages',
     'message_feed',
+    'haystack',
 )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'messages'
 LOGOUT_REDIRECT_URL = 'login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.%s.EmailBackend' % env.str("EMAIL_BACKEND", default='smtp')
@@ -118,4 +119,12 @@ RECIPIENT_ADDRESS = env.str('RECIPIENT_ADDRESS')
 ALTERNATE_EMAIL_HOST_USER =  env.str('ALTERNATE_EMAIL_HOST_USER')
 ALTERNATE_RECIPIENT_ADDRESS =  env.str('ALTERNATE_RECIPIENT_ADDRESS')
 ALTERNATE_EMAIL_HOST_PASSWORD = env.str('ALTERNATE_EMAIL_HOST_PASSWORD')
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSeachEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'haystack',
+    }
+}
 

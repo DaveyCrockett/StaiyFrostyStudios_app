@@ -34,3 +34,6 @@ class ContactPageView(FormView):
 
 class ContactSuccessView(TemplateView):
     template_name = 'contact-success.html'
+
+class ProfilePageView(TemplateView):
+    template_name = 'profile.html'

@@ -40,6 +40,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'new_message' %}">New Message</a></li>
+                  <li><a class="dropdown-item" href="{% url 'profile' user.id %}">Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
                 </ul>
