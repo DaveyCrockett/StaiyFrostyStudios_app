@@ -1,0 +1,83 @@
+
+@media screen and (max-width: 375px) {
+    .forms-container {
+        background-color: white;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        box-shadow: 10px 10px 50px black;
+    }
+    
+    .login-title {
+        text-align: center;
+        color: #7b6dc5;
+    }
+    
+    #login-logo {
+        width: 25%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login-form {
+        text-align: center;
+    }
+
+    .login-form p label {
+        margin-top: 20px;
+        color: #7b6dc5;
+    }
+
+    #forgot-password {
+        display: block;
+    }
+
+    #id_username {
+        margin-top: 5px;
+        line-height: 24pt;
+        background-color: #7b6dc5;
+        color: white;
+    }
+
+    #id_password {
+        margin-top: 5px;
+        line-height: 24pt;
+        background-color: #7b6dc5;
+        color: white;
+    }
+
+    #forgot-password {
+        font-size: 10pt;
+        text-align: left;
+        margin-left: 45px;
+        text-decoration: none;
+        color: #7b6dc5;
+    }
+
+    .account-btn {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 25px;
+    }
+
+    #create-page-link {
+        font-size: 10pt;
+        color: #7b6dc5;
+        text-decoration: none;
+    }
+
+    .btn {
+        line-height: 1;
+    }
+
+    .btn-success {
+        color: white;
+        background-color: #7b6dc5;
+        border-color: black;
+    }
+}

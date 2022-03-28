@@ -2,8 +2,6 @@ from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
 
-from config.settings import ALTERNATE_EMAIL_HOST_USER
-
 class SupportForm(forms.Form):
 
     name = forms.CharField(max_length=120)

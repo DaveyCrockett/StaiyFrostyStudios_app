@@ -3,5 +3,5 @@ from django.db import models
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    department = models.CharField(max_length=512,null=True, blank=True)
-    role = models.CharField(max_length=256, blank=True, null=True)
+    CHOICES = [('Artist', 'Artist'), ('Programmer', 'Programmer')]
+    role = models.CharField(max_length=12, choices=CHOICES, blank=True, null=True)

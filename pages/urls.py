@@ -1,3 +1,4 @@
+from distutils.command.config import config
 from django.urls import path
 from .views import HomePageView, AboutPageView, ContactPageView, ContactSuccessView, SupportPageView, SupportSuccessView, ProfilePageView
 

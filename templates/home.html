@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock title %}
 {% block content %}
-    <h1>HOME PAGE</h1>
-    <p>This is where the home page/landing page will be here.</p>
+    <div class="slogan-button">
+        <h1 class="slogan-title">Slogan Will Go Here</h1>
+        <a href="{% url 'login' %}" id="slogan-login-btn"><button type="button" class="btn btn-outline-dark btn-lg">Log In/Create Account</button></a>
+    </div>
 {% endblock content %}

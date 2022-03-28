@@ -1,0 +1,28 @@
+.btn-outline-dark {
+    border: 2px solid #7b6dc5;
+}
+
+.slogan-button {
+    background-color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 10px 10px 50px black;
+}
+
+.slogan-button .btn {
+    margin-top: 50px;
+    color: white;
+    background-color: #7b6dc5;
+}
+
+#slogan-login-btn {
+    margin-left: 20px;
+}
+
+.slogan-title {
+    text-align: center;
+    color: #7b6dc5;
+}

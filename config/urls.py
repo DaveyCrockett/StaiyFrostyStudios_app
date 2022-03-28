@@ -22,7 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('search/', include('haystack.urls')),
     path('accounts/', include('accounts.urls')),
     path('messages/', include('message_feed.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
