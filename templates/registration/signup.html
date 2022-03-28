@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
+{% endblock link %}
 {% block title %}Sign Up{% endblock title %}
 
 {% block content %}
 <div class="signup-container">
-    <h1>Sign Up</h1>
+    {% load static %}
+    <img id="signup-logo" src="{% static 'images/Logo_PPL-01.png' %}" alt="app logo">
+    <h1 class="signup-title">Sign Up</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

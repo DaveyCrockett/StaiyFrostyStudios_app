@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+{% endblock link %}
 {% block title %}Home{% endblock title %}
 {% block content %}
     <div class="slogan-button">

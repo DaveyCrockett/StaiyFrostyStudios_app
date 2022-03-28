@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/profile.css' %}">
+{% endblock link %}
 {% block title %}Profile{% endblock title %}
 {% block content %}
-    <h1>{{ user.username }} Profile Page</h1>
-    <p>This is where {{ user.username }} profile will be.</p>
+<div class="profile-main-container">
+    <div class="profile-img-title">
+        {% load static %}
+        <img src="{% static 'images/dummy-profile.jpg' %}" alt="Your Profile Picture" id="profile-pic">
+        <div class="profile-title-container">
+            <h2 class="profile-title">{{ user.username }}'s Profile</h2>
+            <p class="follow-count"><span class="followers">6 followers</span><span class="following">10 following</span></p>
+        </div>
+    </div>
+    <div class="profile-favorites">
+        <p>A list of your favorites</p>
+    </div>
+    <div class="about-creator">
+        <p>Entered About info</p>
+    </div>
+    <div class="resume">
+        <p>Display resume/upload resume</p>
+    </div>
+</div>
 {% endblock content %}

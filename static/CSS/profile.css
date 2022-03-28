@@ -1,0 +1,24 @@
+@media screen and (max-width: 375px) {
+    .profile-main-container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .profile-img-title {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    #profile-pic {
+        width: 25%;
+    }
+
+    .profile-title-container {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        color: #7b6dc5;
+    }
+}
