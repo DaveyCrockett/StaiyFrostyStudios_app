@@ -40,6 +40,9 @@
         {% if profile.bio %}
         <p>{{ profile.bio }}</p>
         {% endif %}
+        {% if profile.resume %}
+        <iframe src="{{ profile.resume.url }}" style="width:600px; height:500px;" frameborder="0"></iframe>
+        {% endif %}
     </div>
     <div class="mb-3">
         <p>Followers: {{ number_of_followers }}</p>

@@ -42,7 +42,7 @@ class ContactSuccessView(TemplateView):
 
 class ProfilePageView(TemplateView):
     template_name = 'profile.html'
-    
+
     def get(self, request, pk, *args, **kwargs):
         profile = UserProfile.objects.get(pk=pk)
         print(profile.user)
@@ -86,7 +86,7 @@ class RemoveFollower(LoginRequiredMixin, View):
 
 class ProfileEditView(LoginRequiredMixin, UpdateView, UserPassesTestMixin):
     model= UserProfile
-    fields = ['name', 'bio', 'birth_date', 'location', 'picture']
+    fields = ['name', 'bio', 'birth_date', 'location', 'picture', 'resume']
     template_name = 'profile-edit.html'
 
     def get_success_url(self):
