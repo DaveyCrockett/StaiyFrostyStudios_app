@@ -8,20 +8,56 @@
 <div class="profile-main-container">
     <div class="profile-img-title">
         {% load static %}
-        <img src="{% static 'images/dummy-profile.jpg' %}" alt="Your Profile Picture" id="profile-pic">
+        <img src="{{ profile.picture.url }}" alt="Your Profile Picture" id="profile-pic">
         <div class="profile-title-container">
-            <h2 class="profile-title">{{ user.username }}'s Profile</h2>
-            <p class="follow-count"><span class="followers">6 followers</span><span class="following">10 following</span></p>
+            {% if profile.name %}
+            <h2 class="profile-title">{{ profile.name }}'s Profile
+                <span>
+                    {% if request.user == user %}
+                        <!--Can't see below link on profile page-->
+                        <a href="{% url 'profile-edit' profile.pk %}">EDIT</a>
+                    {% endif %}
+                </span>
+            </h2>
+            {% else %}
+            <h2 class="profile-title">{{ user.username }}'s Profile
+                <span>
+                    {% if request.user == user %}
+                        <a href="{% url 'profile-edit' profile.pk %}">EDIT</a>
+                    {% endif %}
+                </span>
+            </h2>
+            {% endif %}
         </div>
     </div>
-    <div class="profile-favorites">
-        <p>A list of your favorites</p>
+    <div>
+        {% if profile.location %}
+        <p>{{ profile.location }}</p>
+        {% endif %}
+        {% if profile.birth_date %}
+        <p>{{ profile.birth_date }}</p>
+        {% endif %}
+        {% if profile.bio %}
+        <p>{{ profile.bio }}</p>
+        {% endif %}
     </div>
-    <div class="about-creator">
-        <p>Entered About info</p>
-    </div>
-    <div class="resume">
-        <p>Display resume/upload resume</p>
+    <div class="mb-3">
+        <p>Followers: {{ number_of_followers }}</p>
+        {% if user == request.user %}
+        {% else %}
+                {% if is_following %}
+                
+                <form method="POST" action="{% url 'remove-follower' profile.pk %}">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-danger" type=submit>UnFollow</button>
+                </form>
+                {% else %}
+                <form method="POST" action="{% url 'add-follower' profile.pk %}">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-success" type=submit>Follow</button>
+                </form>
+                {% endif %}
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

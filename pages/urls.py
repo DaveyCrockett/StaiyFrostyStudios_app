@@ -1,7 +1,5 @@
-from distutils.command.config import config
 from django.urls import path
-from .views import HomePageView, AboutPageView, ContactPageView, ContactSuccessView, SupportPageView, SupportSuccessView, ProfilePageView
-
+from .views import HomePageView, AboutPageView, ContactPageView, ContactSuccessView, SupportPageView, SupportSuccessView, ProfilePageView, AddFollower, RemoveFollower, ProfileEditView
 
 
 urlpatterns = [
@@ -12,4 +10,7 @@ urlpatterns = [
     path('contact/', ContactPageView.as_view(), name='contact'),
     path('contact-success/', ContactSuccessView.as_view(), name="contact-success"),
     path('profile/<int:pk>', ProfilePageView.as_view(), name='profile'),
+    path('profile/edit/<int:pk>/', ProfileEditView.as_view(), name='profile-edit'),
+    path('profile/<int:pk>/followers/add', AddFollower.as_view(), name='add-follower'),
+    path('profile/<int:pk>/followers/remove', RemoveFollower.as_view(), name='remove-follower')
 ] 

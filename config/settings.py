@@ -98,7 +98,10 @@ INSTALLED_APPS = (
     'accounts',
     'pages',
     'message_feed',
+    'crispy_forms',
 )
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
